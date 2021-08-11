@@ -1,21 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Text, View } from "react-native";
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+
+import { useFonts } from "./src/infrastructure/core/fonts";
+import tw from "./src/styles/tailwind";
 
 export default function App() {
+  const fontsLoaded = useFonts();
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={tw`flex-1 bg-red-100 items-center justify-center`}>
+      <Text style={tw`text-black font-poppins font-bold`}>
+        Open up App.tsx to start working on your app!
+      </Text>
+      <ExpoStatusBar style="auto" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
