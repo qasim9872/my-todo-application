@@ -6,8 +6,8 @@ import tw from "../../styles/tailwind";
 
 export const Home = () => {
   return (
-    <PageTemplate>
-      <Text style={tw`text-black font-poppins font-bold`}>
+    <PageTemplate style={tw`justify-center items-center`}>
+      <Text style={tw`text-black font-poppins`}>
         Open up App.tsx to start working on your app!
       </Text>
     </PageTemplate>

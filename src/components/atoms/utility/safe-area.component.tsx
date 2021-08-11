@@ -4,6 +4,7 @@ import { StatusBar, SafeAreaView } from "react-native";
 import tw from "../../../styles/tailwind";
 
 export const SafeArea: React.FC<ComponentProps<typeof SafeAreaView>> = ({
+  style,
   children,
   ...otherProps
 }) => {
@@ -12,6 +13,7 @@ export const SafeArea: React.FC<ComponentProps<typeof SafeAreaView>> = ({
       style={[
         tw`flex-1 bg-ui-white`,
         StatusBar.currentHeight ? { marginTop: StatusBar.currentHeight } : {},
+        style,
       ]}
       {...otherProps}
     >
