@@ -1,10 +1,11 @@
 import React from "react";
-import { Text } from "react-native";
 
 import tw from "../../../styles/tailwind";
 import { PageTemplate } from "../../../components/templates/page.template";
 import { useAppSelector } from "../../../redux/hooks";
 import { selectTodoList } from "../todo.store";
+import { TodoList } from "../components/todo-list.component";
+import { TodoInput } from "../components/todo-input";
 
 export const TodoScreen = () => {
   const todoList = useAppSelector(selectTodoList);
@@ -12,10 +13,9 @@ export const TodoScreen = () => {
   console.log({ todoList });
 
   return (
-    <PageTemplate style={tw`items-center justify-center`}>
-      <Text style={tw`text-black`}>
-        Open up App.tsx to start working on your app!
-      </Text>
+    <PageTemplate style={tw`flex justify-center flex-1`}>
+      <TodoInput />
+      <TodoList todoList={todoList} />
     </PageTemplate>
   );
 };

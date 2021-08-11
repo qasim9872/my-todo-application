@@ -1,18 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../../redux/store";
-
-interface TodoItem {
-  id: string;
-  description: string;
-  completed: boolean;
-}
+import { TodoItem } from "./interfaces/todo-item.interface";
 
 interface TodoState {
   items: TodoItem[];
 }
 
 const INITIAL_STATE: TodoState = {
-  items: [],
+  items: [
+    { id: "1", description: "Test 1", completed: false },
+    { id: "2", description: "Test 2", completed: false },
+    { id: "3", description: "Test 3", completed: false },
+  ],
 };
 
 export const todoSlice = createSlice({
