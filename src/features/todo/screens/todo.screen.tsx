@@ -13,7 +13,7 @@ export const TodoScreen = () => {
   console.log({ todoList });
 
   return (
-    <PageTemplate style={tw`flex justify-center flex-1`}>
+    <PageTemplate style={tw`flex justify-center flex-1 mx-2`}>
       <TodoInput />
       <TodoList todoList={todoList} />
     </PageTemplate>

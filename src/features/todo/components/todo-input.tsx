@@ -2,6 +2,7 @@ import React from "react";
 import { TextInput } from "react-native-paper";
 import { useAppDispatch } from "../../../redux/hooks";
 import { add } from "../todo.store";
+import tw from "../../../styles/tailwind";
 
 export const TodoInput = () => {
   const [text, setText] = React.useState("");
@@ -21,7 +22,8 @@ export const TodoInput = () => {
 
   return (
     <TextInput
-      label="Todo item"
+      style={tw`my-4`}
+      label="Add todo item"
       value={text}
       onChangeText={(text) => setText(text)}
       right={<TextInput.Icon name="check-outline" onPress={onTicked} />}
